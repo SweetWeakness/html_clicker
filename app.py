@@ -40,7 +40,10 @@ def buy1():
     if clicks >= 20:
         buy[0] += 1
         clicks -= 20
-    return render_template('index.html', item=round(clicks, 2))
+    else:
+        return render_template('index.html', item="Not enough clicks (You have {})".format(round(clicks, 2)))
+
+    return render_template('index.html', item=round(clicks, 2), message="Nice! You bought +0.1 perfomance")
 
 
 @app.route('/buy2', methods=['GET', 'POST'])
@@ -49,7 +52,9 @@ def buy2():
     if clicks >= 120:
         buy[1] += 1
         clicks -= 120
-    return render_template('index.html', item=round(clicks, 2))
+    else:
+        return render_template('index.html', item="Not enough clicks (You have {})".format(round(clicks, 2)))
+    return render_template('index.html', item=round(clicks, 2), message="Nice! You bought +0.1 perfomance")
 
 
 if __name__ == '__main__':
