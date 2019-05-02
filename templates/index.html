@@ -1,19 +1,37 @@
 <html>
   <head>
-    <title>Clicker</title>
+    <title>Clicker? Yes!</title>
+      <style type="text/css">
+          .block1 {
+              float: left ;
+              width: 275px;
+          }
+          .block2 {
+              float: left;
+              width: 275px;
+              margin-left: 10px;
+          }
+      </style>
   </head>
   <body>
-  <p>{{ item }}</p>
-  <p>{{ message }}</p>
-  <form action="/clicker" method="POST">
-    <button onclick="window.location.reload()">Click!</button>
-  </form>
+    <div class="block1">
+      <p>{{ item }}</p>
+      <p>{{ message }}</p>
+      <form action="/clicker" method="POST">
+        <button onclick="window.location.reload()">Click!</button>
+      </form>
+      <form action="/buy1" method="POST">
+        <button onclick="window.location.reload()">Buy +0.1 (20 clicks)</button>
+      </form>
+      <form action="/buy2" method="POST">
+        <button onclick="window.location.reload()">Buy +1 (120 clicks)</button>
+      </form>
+    </div>
+  <div class="block2">
+      <p>You have +{{ speed }} per click</p>
+      <p>Total clicks : {{ stat }}</p>
+  </div>
 
-  <form action="/buy1" method="POST">
-    <button onclick="window.location.reload()">Buy +0.1 (20 clicks)</button>
-  </form>
-  <form action="/buy2" method="POST">
-    <button onclick="window.location.reload()">Buy +1 (120 clicks)</button>
-  </form>
+  <div><a href="/">Log out</a></div>
   </body>
 </html>
