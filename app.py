@@ -34,7 +34,7 @@ def index():
         INSERT INTO users (name1, buy1, buy2, clicks, stat1)
          values (?,?,?,?,?)''', [text, 0, 0, 0, 0])
         conn.commit()
-        print('new guy!')
+        print('new user')
     else:
         cur.execute('''
             SELECT users.buy1, users.buy2, clicks, users.stat1 FROM users
@@ -43,7 +43,7 @@ def index():
         for row in cur:
             buy_1, buy_2, clicks, stat = row
             buy[0], buy[1], clicks, stat = buy_1, buy_2, clicks, stat
-        print('old guy!')
+        print('old user')
     conn.close()
     speed = 1 + 0.1 * buy[0] + buy[1]
     return render_template('index.html',
