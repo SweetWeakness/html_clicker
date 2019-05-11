@@ -2,8 +2,10 @@ import sqlite3
 
 conn = sqlite3.connect("users.db")
 
-curr = conn.cursor()
+cur = conn.cursor()
 
-curr.execute("CREATE TABLE users (ip TEXT, buy1 INTEGER, buy2 INTEGER)")
+cur.execute('DROP TABLE IF EXISTS users')
+
+cur.execute('CREATE TABLE users (name1 TEXT, buy1 INTEGER, buy2 INTEGER, clicks INTEGER, stat1 INTEGER )')
 
 conn.close()

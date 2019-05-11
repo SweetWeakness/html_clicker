@@ -27,11 +27,15 @@
         <button onclick="window.location.reload()">Buy +1 (120 clicks)</button>
       </form>
     </div>
-  <div class="block2">
-      <p>You have +{{ speed }} per click</p>
-      <p>Total clicks : {{ stat }}</p>
-  </div>
+    <div class="block2">
+        <p>You have +{{ speed }} per click</p>
+        <p>Total clicks : {{ stat }}</p>
+    </div>
 
-  <div><a href="/">Log out</a></div>
+    <div>
+        <form action="/savepoint" method="POST">
+            <button onclick="window.location.reload()">Save progress</button>
+        </form>
+    </div>
   </body>
 </html>
